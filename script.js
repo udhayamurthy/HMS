@@ -98,7 +98,7 @@ function populateUserTable() {
 function populateAppointmentTable() {
     const tableBody = document.querySelector('#appointmentTable tbody');
     tableBody.innerHTML = '';
-    data.appointments1.forEach((appointment, index) => {
+    data.appointments.forEach((appointment, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${appointment.patientID}</td>
@@ -114,11 +114,68 @@ function populateAppointmentTable() {
     });
 }
 
+// Close appointment function
+function deleteAppointment(index) {
+    data.appointments.splice(index, 1);
+    populateDoctorAppointmentTable();
+}
+
+function populateAppointmentTable1() {
+    const tableBody = document.querySelector('#appointmentTable tbody');
+    tableBody.innerHTML = '';
+    data.appointments1.forEach((appointment, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${appointment.patientID}</td>
+            <td>${appointment.patientName}</td>
+            <td>${appointment.doctor}</td>
+            <td>${appointment.date}</td>
+            <td>
+                <button onclick="editAppointment('${appointment.patientID}')">Edit</button>
+                <button onclick="deleteAppointment1(${index})">Cancel</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Close appointment function
+function deleteAppointment1(index) {
+    data.appointments1.splice(index, 1);
+    populateDoctorAppointmentTable();
+}
+
+function populateAppointmentTable2() {
+    const tableBody = document.querySelector('#appointmentTable tbody');
+    tableBody.innerHTML = '';
+    data.appointments2.forEach((appointment, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${appointment.patientID}</td>
+            <td>${appointment.patientName}</td>
+            <td>${appointment.doctor}</td>
+            <td>${appointment.date}</td>
+            <td>
+                <button onclick="editAppointment2('${appointment.patientID}')">Edit</button>
+                <button onclick="deleteAppointment(${index})">Cancel</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Close appointment function
+function deleteAppointment2(index) {
+    data.appointments2.splice(index, 1);
+    populateDoctorAppointmentTable();
+}
+
+
 // Populate appointments table on doctor page
 function populateDoctorAppointmentTable() {
     const tableBody = document.querySelector('#doctorAppointmentTable tbody');
     tableBody.innerHTML = '';
-    data.appointments2.forEach((appointment, index) => {
+    data.appointments.forEach((appointment, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${appointment.patientID}</td>
@@ -135,6 +192,51 @@ function populateDoctorAppointmentTable() {
 
 // Close appointment function
 function closeAppointment(index) {
+    data.appointments.splice(index, 1);
+    populateDoctorAppointmentTable();
+}
+function populateDoctorAppointmentTable1() {
+    const tableBody = document.querySelector('#doctorAppointmentTable tbody');
+    tableBody.innerHTML = '';
+    data.appointments1.forEach((appointment, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${appointment.patientID}</td>
+            <td>${appointment.patientName}</td>
+            <td>${appointment.date}</td>
+            <td>${appointment.status}</td>
+            <td>
+                <button onclick="closeAppointment1(${index})">Close</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+// Close appointment function
+function closeAppointment1(index) {
+    data.appointments1.splice(index, 1);
+    populateDoctorAppointmentTable();
+}
+
+function populateDoctorAppointmentTable2() {
+    const tableBody = document.querySelector('#doctorAppointmentTable tbody');
+    tableBody.innerHTML = '';
+    data.appointments1.forEach((appointment, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${appointment.patientID}</td>
+            <td>${appointment.patientName}</td>
+            <td>${appointment.date}</td>
+            <td>${appointment.status}</td>
+            <td>
+                <button onclick="closeAppointment2(${index})">Close</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+// Close appointment function
+function closeAppointment2(index) {
     data.appointments2.splice(index, 1);
     populateDoctorAppointmentTable();
 }
@@ -143,12 +245,12 @@ function closeAppointment(index) {
 function setupRefreshButtons() {
     const refreshDoctorBtn = document.getElementById('refreshDoctorBtn');
     if (refreshDoctorBtn) {
-        refreshDoctorBtn.addEventListener('click', populateDoctorAppointmentTable);
+        refreshDoctorBtn.addEventListener('click', populateDoctorAppointmentTable1);
     }
 
     const refreshFrontdeskBtn = document.getElementById('refreshFrontdeskBtn');
     if (refreshFrontdeskBtn) {
-        refreshFrontdeskBtn.addEventListener('click', populateAppointmentTable);
+        refreshFrontdeskBtn.addEventListener('click', populateAppointmentTable1);
     }
 }
 
