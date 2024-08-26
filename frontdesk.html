@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Frontdesk Dashboard</h2>
-    <button onclick="newAppointment()">New Appointment</button>
-    <h3>All Appointments</h3>
+    <h1>Frontdesk Dashboard</h1>
     <table id="appointmentTable">
-        <tr>
-            <th>Appointment ID</th>
-            <th>Patient Name</th>
-            <th>Doctor</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-        <!-- Appointment rows will be populated here -->
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Patient Name</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Appointments will be populated here by JavaScript -->
+        </tbody>
     </table>
+    <button onclick="addNewAppointment()">Add New Appointment</button>
     <script src="script.js"></script>
 </body>
 </html>

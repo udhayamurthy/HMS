@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management System</title>
+    <title>Login - Hospital Management System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Hospital Management System</h1>
-    <form id="loginForm" onsubmit="return login()">
+    <form id="loginForm">
         <label for="userID">User ID:</label>
-        <input type="text" id="userID" required>
+        <input type="text" id="userID" name="userID" required>
+        <br>
         <label for="password">Password:</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" name="password" required>
+        <br>
         <button type="submit">Login</button>
     </form>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Admin Dashboard</h2>
-    <button onclick="addUser()">Add New User</button>
-    <h3>List of Users</h3>
+    <h1>Admin Dashboard</h1>
     <table id="userTable">
-        <tr>
-            <th>User ID</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-        <!-- User rows will be populated here -->
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Users will be populated here by JavaScript -->
+        </tbody>
     </table>
-    <script src="./script.js"></script>
+    <button onclick="addNewUser()">Add New User</button>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Doctor Dashboard</h2>
-    <h3>Your Appointments</h3>
+    <h1>Doctor Dashboard</h1>
     <table id="doctorAppointmentTable">
-        <tr>
-            <th>Appointment ID</th>
-            <th>Patient Name</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-        <!-- Doctor-specific appointment rows will be populated here -->
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Patient Name</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Appointments will be populated here by JavaScript -->
+        </tbody>
     </table>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
