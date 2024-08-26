@@ -3,20 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Hospital Management System</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-container input {
+            padding-right: 30px; /* Space for the icon */
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+        .forgot-password-link {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hospital Management System</h1>
+    <h1>Login</h1>
     <form id="loginForm">
         <label for="userID">User ID:</label>
-        <input type="text" id="userID" name="userID" required>
-        <br>
+        <input type="text" id="userID" name="userID" required><br><br>
+
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Login</button>
+        <div class="password-container">
+            <input type="password" id="password" name="password" required>
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div><br><br>
+
+        <input type="submit" value="Login">
+        <a href="forgot-password.html" class="forgot-password-link">Forgot Password?</a>
     </form>
+
     <script src="script.js"></script>
 </body>
 </html>
