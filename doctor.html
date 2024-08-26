@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Doctor Dashboard</h1>
+	<button onclick="refreshPage()" style="float: right;">Refresh</button>
     <table id="doctorAppointmentTable">
         <thead>
             <tr>
@@ -15,12 +16,14 @@
                 <th>Patient Name</th>
                 <th>Date</th>
                 <th>Status</th>
+				<th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <!-- Appointments will be populated here by JavaScript -->
         </tbody>
     </table>
+	
     <script src="script.js"></script>
 </body>
 </html>
