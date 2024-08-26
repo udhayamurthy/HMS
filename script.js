@@ -1,9 +1,9 @@
-﻿// Simulated JSON data
+// Simulated JSON data
 const data = {
     "users": [
         { "userID": "admin", "password": "Admin123", "name": "SYS ADMIN", "role": "ADMIN" },
         { "userID": "smith", "password": "Doctor123","name": "Dr Smith Right", "role": "DOCTOR" },
-		{ "userID": "sony", "password": "Doctor123", "name": "Sony J", "role": "DOCTOR" },
+	{ "userID": "sony", "password": "Doctor123", "name": "Sony J", "role": "DOCTOR" },
         { "userID": "sofi", "password": "Front123", "name": "Sofi Varghese", "role": "FRONTDESK" }
     ],
     "appointments": [
@@ -39,6 +39,7 @@ function login(event) {
     }
 }
 
+
 function populateUserTable() {
     const tableBody = document.querySelector('#userTable tbody');
     tableBody.innerHTML = '';
@@ -47,7 +48,7 @@ function populateUserTable() {
         row.innerHTML = `
             <td>${user.userID}</td>
             <td>${user.name}</td>
-			<td>${user.role}</td>
+            <td>${user.role}</td>
             <td>
                 <button onclick="editUser('${user.userID}')">Edit</button>
                 <button onclick="deleteUser('${user.userID}')">Delete</button>
@@ -56,6 +57,7 @@ function populateUserTable() {
         tableBody.appendChild(row);
     });
 }
+
 
 function populateAppointmentTable() {
     const tableBody = document.querySelector('#appointmentTable tbody');
