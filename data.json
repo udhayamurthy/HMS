@@ -1,0 +1,93 @@
+﻿{
+  "users": [
+    {
+      "userID": "admin",
+      "password": "admin",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "userID": "doctor1",
+      "password": "doctor1",
+      "role": "doctor",
+      "status": "active",
+      "firstName": "John",
+      "lastName": "Smith",
+      "dob": "1980-05-15",
+      "age": 44,
+      "sex": "Male",
+      "address": "123 Medical St, New York, NY",
+      "contactDetails": {
+        "email": "dr.smith@hospital.com",
+        "phone": "123-456-7890",
+        "mobile": "555-555-5555",
+        "emergencyPhone": "555-666-7777"
+      },
+      "designation": "Cardiologist",
+      "consultationFees": 200,
+      "consultationDays": ["Monday", "Wednesday", "Friday"],
+      "consultationTime": "09:00 AM - 12:00 PM"
+    },
+    {
+      "userID": "frontdesk1",
+      "password": "frontdesk1",
+      "role": "frontdesk",
+      "status": "active",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "dob": "1990-08-20",
+      "age": 33,
+      "sex": "Female",
+      "address": "456 Admin Blvd, New York, NY",
+      "contactDetails": {
+        "email": "jane.doe@hospital.com",
+        "phone": "321-654-9870",
+        "mobile": "555-444-3333"
+      },
+      "designation": "Receptionist"
+    },
+    {
+      "userID": "patient1",
+      "password": "patient1",
+      "role": "patient",
+      "status": "active",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "dob": "1995-10-10",
+      "age": 28,
+      "sex": "Female",
+      "address": "789 Patient Ln, New York, NY",
+      "contactDetails": {
+        "email": "alice.johnson@example.com",
+        "phone": "987-654-3210",
+        "mobile": "555-222-1111"
+      }
+    }
+  ],
+  "appointments": [
+    {
+      "appointmentID": "1",
+      "patientID": "patient1",
+      "patientName": "Alice Johnson",
+      "doctor": "Dr. John Smith",
+      "date": "2024-08-21",
+      "time": "10:00 AM",
+      "status": "Scheduled",
+      "consultationFees": 200,
+      "consultationDays": ["Monday", "Wednesday", "Friday"],
+      "consultationTime": "09:00 AM - 12:00 PM"
+    },
+    {
+      "appointmentID": "2",
+      "patientID": "patient1",
+      "patientName": "Alice Johnson",
+      "doctor": "Dr. John Smith",
+      "date": "2024-08-23",
+      "time": "11:00 AM",
+      "status": "Scheduled",
+      "consultationFees": 200,
+      "consultationDays": ["Monday", "Wednesday", "Friday"],
+      "consultationTime": "09:00 AM - 12:00 PM"
+    }
+  ]
+}
