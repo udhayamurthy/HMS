@@ -1,13 +1,14 @@
 ﻿// Simulated JSON data
 const data = {
     "users": [
-        { "userID": "admin", "password": "admin123", "role": "admin" },
-        { "userID": "doctor1", "password": "doctor123", "role": "doctor" },
-        { "userID": "frontdesk1", "password": "frontdesk123", "role": "frontdesk" }
+        { "userID": "admin", "password": "Admin123", "name": "SYS ADMIN", "role": "ADMIN" },
+        { "userID": "smith", "password": "Doctor123","name": "Dr Smith Right", "role": "DOCTOR" },
+		{ "userID": "sony", "password": "Doctor123", "name": "Sony J", "role": "DOCTOR" },
+        { "userID": "sofi", "password": "Front123", "name": "Sofi Varghese", "role": "FRONTDESK" }
     ],
     "appointments": [
-        { "patientID": "P001", "patientName": "John Doe", "doctor": "Dr. Smith", "date": "2024-08-28", "status": "Pending" },
-        { "patientID": "P002", "patientName": "Jane Doe", "doctor": "Dr. Brown", "date": "2024-08-28", "status": "Confirmed" }
+        { "patientID": "P001", "patientName": "John Doe", "doctor": "Dr. Smith Right", "date": "2024-08-28 10:00:000", "status": "Pending" },
+        { "patientID": "P002", "patientName": "Adam White", "doctor": "Dr. Sony J", "date": "2024-08-28 15:00:000", "status": "Confirmed" }
     ]
 };
 
@@ -21,13 +22,13 @@ function login(event) {
 
     if (user) {
         switch (user.role) {
-            case 'admin':
+            case 'ADMIN':
                 window.location.href = 'admin.html';
                 break;
-            case 'doctor':
+            case 'DOCTOR':
                 window.location.href = 'doctor.html';
                 break;
-            case 'frontdesk':
+            case 'FRONTDESK':
                 window.location.href = 'frontdesk.html';
                 break;
             default:
@@ -45,7 +46,8 @@ function populateUserTable() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${user.userID}</td>
-            <td>${user.role}</td>
+            <td>${user.name}</td>
+			<td>${user.role}</td>
             <td>
                 <button onclick="editUser('${user.userID}')">Edit</button>
                 <button onclick="deleteUser('${user.userID}')">Delete</button>
