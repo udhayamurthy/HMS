@@ -250,7 +250,7 @@ function setupRefreshButtons() {
 
     const refreshFrontdeskBtn = document.getElementById('refreshFrontdeskBtn');
     if (refreshFrontdeskBtn) {
-        refreshFrontdeskBtn.addEventListener('click', populateAppointmentTable1);
+        refreshFrontdeskBtn.addEventListener('click', populateAppointmentTable2);
     }
 }
 
